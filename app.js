@@ -4,7 +4,7 @@ const app = express()
 
 app.get("/", (req, res) => {
       console.log("pet.recibida")
-      res.send('<h1>hola mundo<h1>')
+      res.send('<h1>hola mundo primer cambio<h1>')
 })
 
 app.listen(4000,()=>{
