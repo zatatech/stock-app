@@ -1,5 +1,6 @@
 const express = require ("express")
-
+require('dotenv').config()
+const PORT= process.env.PORT || 4000
 
 const mongoose = require ('mongoose')
 
@@ -9,15 +10,9 @@ const mongoose = require ('mongoose')
 //variable.... el PATH es una de esas cosas
 const path = require("path")
 
-
-require('dotenv').config()
-
 const app = express()
 
 
-
-
-const PORT= process.env.PORT || 4000
 
 //es asyncrono y devuelve una promesa
 mongoose.connect (   
@@ -45,10 +40,6 @@ const productSchema = mongoose.Schema(
   {timestamps: true}
 )
 const Product = mongoose.model('Product', productSchema, 'Products')
-
-
-
-
 
 app.use(express.json())  //MIDDLEWARE QUE intercepta objetos tipo JSON y lo deja en
                           // deja en la propiedad req.body
