@@ -4,7 +4,11 @@ const path = require("path") // servidor como AZURE tendra otro camino... de ahi
                             //variable.... el PATH es una de esas cosas
 
 const express = require ("express")
+const cors = require("cors")
 const app = express()
+
+app.use(cors())
+
 
 app.use(express.json())  //MIDDLEWARE QUE intercepta objetos tipo JSON y lo deja en
                           // deja en la propiedad req.body
