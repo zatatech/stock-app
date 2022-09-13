@@ -19,10 +19,11 @@ const postProduct = (req,res) => {    // console.log({body:req.body})
                                                 name:req.body.name,
                                                 price:req.body.price
                                                 })*/
+    console.log(newProduct)                                                
    newProduct
       .save()  
       .then((result)=>{
-        res.status(201).json({ok:true})
+        res.status(201).json({okk:true})
       })
       .catch((err)=> console.log(err))
        

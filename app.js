@@ -7,7 +7,9 @@ const express = require ("express")
 const cors = require("cors")
 const app = express()
 
-app.use(cors())
+//app.use(cors())
+app.use(cors({origin:true}))
+//app.use(cors({origin:`https://stock-app-front-ntu3v6731-zatatech.vercel.app/`}))
 
 
 app.use(express.json())  //MIDDLEWARE QUE intercepta objetos tipo JSON y lo deja en
@@ -18,6 +20,8 @@ const dbConnect = require('./db')  //console.log({dbConnect})
 dbConnect(app)
 
 const productRouter=require('./routes/product')
+//use un determinado router para controlar todas las
+//peticiones que coincidan con esta ruta 
 app.use('/api/v1/products', productRouter)
 
 
